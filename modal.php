@@ -14,7 +14,7 @@
                     </button>
             </div>        
             <div class="modal-body">
-                <form action="proses_pendaftaran.php" method="POST">
+                <input type="hidden" name="id" id="idnya">
                 <div class="form-group">
                     <label>Kode Anggota</label>
                     <input type="text" name="kode" id="kode" class="form-control">
@@ -52,7 +52,6 @@
                 <button id="edit" class="btn btn-warning btn-sm">Edit</button>
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
             </div>
-            </form>
         </div>
     </div>
 </div>
@@ -70,10 +69,8 @@
             <div class="modal-body" id="hapus-body">
             </div>
             <div class="modal-footer">
-                <form action="hapus.php" method="post">
                 <button id="hapus" class="btn btn-primary btn-danger btn-sm">Hapus</button>
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                </form>
             </div>
         </div>
     </div>

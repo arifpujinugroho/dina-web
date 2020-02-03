@@ -28,13 +28,14 @@
 
         echo "<td>";
         echo "<button class='editUser btn btn-sm btn-warning' 
+        data-id='".$siswa['id']."' 
         data-kode='".$siswa['kode_anggota']."' 
         data-nama='".$siswa['nama']."'
         data-jns='".$siswa['Jenis_Kelamin']."'
         data-kelas='".$siswa['kelas']."'   
         data-alamat='".$siswa['alamat']."' 
-        data-no_hp='".$siswa['no_hp']."'>Edit</button> ";
-        echo "<button class='hapusUser btn btn-sm btn-danger' data-kode_anggota='".$siswa['kode_anggota']."' data-nama='".$siswa['nama']."'>Hapus</button>";
+        data-hp='".$siswa['no_hp']."'>Edit</button> ";
+        echo "<button class='hapusUser btn btn-sm btn-danger' data-id='".$siswa['id']."' data-nama='".$siswa['nama']."'>Hapus</button>";
         echo "</td>";
         echo "</tr>";
         }
@@ -51,7 +52,9 @@ $('.editUser').click(function(){
         $('#Jenis_Kelamin').val($(this).data('jns'));
         $('#kelas').val($(this).data('kelas'));
         $('#alamat').val($(this).data('alamat'));
+        $('#idnya').val($(this).data('id'));
         $('#kode_anggota').val($(this).data('kode'));
+        $('#no_hp').val($(this).data('hp'));
         $('#modal-title').html('Edit '+nama);
         $('#submit').hide();
         $('#edit').show();
@@ -61,7 +64,7 @@ $('.editUser').click(function(){
 $('.hapusUser').click(function(){
         var nama = $(this).data('nama');
         $('#nama').val(nama);
-        $('#kode_anggota').val($(this).data('kode'));
+        $('#idnya').val($(this).data('id'));
         $('#hapus-title').html('Hapus '+nama+'?');
         $('#hapus-body').html('Apakah anda yakin ingin menghapus <strong class="text-danger">'+nama+'</strong>?');
         $('#hapusModal').modal('show');

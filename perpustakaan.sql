@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Jan 2020 pada 02.36
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Waktu pembuatan: 04 Feb 2020 pada 00.11
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpustakaan`
+-- Database: `pendaftaran_siswa`
 --
 
 -- --------------------------------------------------------
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `anggota` (
+  `id` int(11) NOT NULL,
   `kode_anggota` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `Jenis_Kelamin` varchar(20) NOT NULL,
@@ -41,8 +42,8 @@ CREATE TABLE `anggota` (
 -- Dumping data untuk tabel `anggota`
 --
 
-INSERT INTO `anggota` (`kode_anggota`, `nama`, `Jenis_Kelamin`, `kelas`, `alamat`, `no_hp`) VALUES
-('', 'DINA SEPTIANA', 'perempuan', 'XI', 'Clapar Purwodadi Tegalrejo Magelang', '0821456876788');
+INSERT INTO `anggota` (`id`, `kode_anggota`, `nama`, `Jenis_Kelamin`, `kelas`, `alamat`, `no_hp`) VALUES
+(1, 'Anggota1', 'DINA SEPTIANA', 'perempuan', 'XI', 'Clapar Purwodadi Tegalrejo Magelang', '0821456876788');
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,7 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`) VALUES
 -- Indeks untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  ADD PRIMARY KEY (`kode_anggota`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `user`
@@ -84,6 +85,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `anggota`
+--
+ALTER TABLE `anggota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

@@ -14,14 +14,10 @@ $(document).ready(function(){
       $("#content").load('list_siswa.php');
       $('#jumbotron').html('Anggota yang sudah mendaftar');
     });
-    
-    $("#tambah-baru").click(function(){
-      $("#content").load('form_daftar.php');
-      $('#jumbotron').html('Perpustakaan');
-    });
 
     $('#tambahdata').click(function(){
-        $('#kode_anggota').val('');
+        $('#idnya').val(''); //ini lihat di modal baris 18 disana ada id=idnya.. nah klo di js jadinya #idnya
+        $('#kode').val(''); // '#kode' ini disesuaikan dengan atribut id yang ada di inputnya. contoh ini #kode brarti milik file modal.php bris 21
         $('#nama').val('');
         $('#Jenis_Kelamin').val('');
         $('#kelas').val('');
@@ -33,7 +29,7 @@ $(document).ready(function(){
     });
 
     $('#submit').click(function(){
-        var kode_anggota = $('#kode_anggota').val();
+        var kode_anggota = $('#kode').val();
         var nama = $('#nama').val();
         var alamat = $('#alamat').val();
         var kelas = $('#kelas').val();
@@ -61,11 +57,13 @@ $(document).ready(function(){
         var nama = $('#nama').val();
         var alamat = $('#alamat').val();
         var kelas = $('#kelas').val();
+        var id = $('#idnya').val();
         var no_hp = $('#no_hp').val();
         var Jenis_Kelamin = $('#Jenis_Kelamin').val();
-        var kode_anggota = $('#kode_anggota').val();
+        var kode_anggota = $('#kode').val();
 
         $.post("proses_edit.php", {
+                id: id,
                 kode_anggota: kode_anggota,
                 nama: nama,
                 alamat: alamat,
@@ -83,10 +81,10 @@ $(document).ready(function(){
     });
 
     $('#hapus').click(function(){
-        var kode_anggota = $('#kode_anggota').val();
+        var id = $('#idnya').val();
 
         $.get("hapus.php", {
-                kode_anggota: kode_anggota
+                id: id
             })
             .done(function() {
                 $("#content").load('list_siswa.php');

@@ -14,8 +14,7 @@
         $sql = mysqli_query($db,"select *from anggota");
         while($data = mysqli_fetch_array($sql)) {
         ?>
-        <tr>
-          <td class="text-center">
+        <tr class="text-center">
           <td> <?php echo $data['kode_anggota']; ?></td>
           <td> <?php echo $data['nama']; ?></td>
           <td> <?php echo $data['Jenis_Kelamin']; ?></td>

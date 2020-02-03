@@ -3,7 +3,7 @@
 include("config.php");
 
 //ambil data dari formulir
-	$kode=$_POST['kode'];
+	$kode=$_POST['kode_anggota'];
 	$nama=$_POST['nama'];
 	$jk=$_POST['Jenis_Kelamin'];
 	$kelas=$_POST['kelas'];
