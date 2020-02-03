@@ -1,10 +1,10 @@
 <?php include("masuk.php"); ?>
 <?php
 include("config.php");
-    //ambil id dari query string
-    $id=$_GET['id'];
+    //ambil kode dari query string
+    $kode_anggota=$_GET['kode'];
 
     //buat query hapus
-    $sql="DELETE FROM calon_siswa WHERE id=".$id;
+    $sql="DELETE FROM anggota WHERE kode=".$kode_anggota;
     $query=mysqli_query($db,$sql);
 ?>

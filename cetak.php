@@ -3,25 +3,25 @@
 <center>
     <table border="1" style="width: 70%">
         <tr class="text-center">
-            <th>No</th>
+            <th>Kode Anggota</th>
             <th>Nama</th>
-            <th>Alamat</th>
             <th>Jenis Kelamin</th>
-            <th>Agama</th>
-            <th>Sekolah Asal</th>
+            <th>Kelas</th>
+            <th>Alamat</th>
+            <th>No HP</th>
         </tr>
         <?php
-        $no = 1;
-        $sql = mysqli_query($db,"select *from calon_siswa");
+        $sql = mysqli_query($db,"select *from anggota");
         while($data = mysqli_fetch_array($sql)) {
         ?>
         <tr>
-          <td class="text-center"> <?php echo $no++; ?></td>
+          <td class="text-center">
+          <td> <?php echo $data['kode_anggota']; ?></td>
           <td> <?php echo $data['nama']; ?></td>
+          <td> <?php echo $data['Jenis_Kelamin']; ?></td>
+          <td> <?php echo $data['kelas']; ?></td>
           <td> <?php echo $data['alamat']; ?></td>
-          <td> <?php echo $data['jenis_kelamin']; ?></td>
-          <td> <?php echo $data['agama']; ?></td>
-          <td> <?php echo $data['sekolah_asal']; ?></td>
+          <td> <?php echo $data['no_hp']; ?></td>
         </tr>
         <?php
         }

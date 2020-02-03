@@ -3,14 +3,14 @@
 include("config.php");
 
   // ambil data dari Formulir
-  $id = $_POST['id'];
+  $kode = $_POST['kode_anggota'];
   $nama = $_POST['nama'];
+  $jk = $_POST['Jenis_Kelamin'];
+  $kelas = $_POST['kelas'];
   $alamat = $_POST['alamat'];
-  $jk = $_POST['jenis_kelamin'];
-  $agama = $_POST['agama'];
-  $sekolah = $_POST['sekolah_asal'];
+  $no_hp = $_POST['no_hp'];
 
   // buat query update
-  $sql = "UPDATE calon_siswa SET nama='$nama',alamat='$alamat',jenis_kelamin='$jk',agama='$agama',sekolah_asal='$sekolah' WHERE id=$id";
+  $sql = "UPDATE anggota SET kode_anggota='$kode',nama='$nama',jenis_kelamin='$jk',kelas='$kelas',alamat='$alamat',no_hp='$no_hp'";
   $query = mysqli_query($db,$sql);
 ?>

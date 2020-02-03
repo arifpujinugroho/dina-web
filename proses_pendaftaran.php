@@ -3,14 +3,17 @@
 include("config.php");
 
 //ambil data dari formulir
+	$kode=$_POST['kode'];
 	$nama=$_POST['nama'];
+	$jk=$_POST['Jenis_Kelamin'];
+	$kelas=$_POST['kelas'];
 	$alamat=$_POST['alamat'];
-	$jk=$_POST['jenis_kelamin'];
-	$agama=$_POST['agama'];
-	$sekolah=$_POST['sekolah_asal'];
+	$no_hp=$_POST['no_hp'];
 
 
 	//buat query
-	$sql="INSERT INTO calon_siswa(nama, alamat, jenis_kelamin, agama, sekolah_asal)VALUE('$nama', '$alamat', '$jk', '$agama', '$sekolah')";
+	$sql="INSERT INTO anggota(kode_anggota, nama, Jenis_Kelamin, kelas, alamat, no_hp)VALUE('$kode','$nama', '$jk', '$kelas', '$alamat', '$no_hp')";
 	$query=mysqli_query($db,$sql);
+
+	header('Location: home.php');
  ?>

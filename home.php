@@ -9,7 +9,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Pendaftaran Siswa Baru | SMK Coding</title>
+    <title>Sistem Perpustakaan berbasis web</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -24,6 +24,9 @@
             <li class="nav-item">
               <a class="nav-link" id="cetak">Cetak</a></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" id="cari">Pencarian</a></a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="text-right float-sm-right ">
@@ -33,13 +36,13 @@
     </nav>
     <!-- Jadiin Jumbotron -->
     <div class="jumbotron text-center">
-        <h1 id="jumbotron">SMK Coding</h1>
+        <h1 id="jumbotron">Perpustakaan</h1>
     </div>
     <?php if(isset($_GET['status'])): ?>
     <p>
         <?php
             if($_GET['status'] == 'sukses'){
-                echo "Pendaftaran siswa baru berhasil!";
+                echo "Pendaftaran anggota baru berhasil!";
             } else {
                 echo "Pendaftaran gagal!";
             }

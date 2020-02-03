@@ -3,8 +3,6 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -23,10 +21,10 @@
 
       <form action="cek_login.php" method="post">
         <label>Username</label>
-        <input type="text" name="username" class="form_login form-control" placeholder="Username.." required="required">
+        <input type="text" name="username" class="form_login form-control" placeholder="Username..." required="required">
 
         <label>Password</label>
-        <input type="password" name="password" class="form_login form-control" placeholder="Password.." required="required">
+        <input type="password" name="password" class="form_login form-control" placeholder="Password..." required="required">
 
         <input type="submit" class="tombol_login" value="LOGIN">
 

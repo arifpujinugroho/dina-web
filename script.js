@@ -1,28 +1,31 @@
 
 $(document).ready(function(){
-    //jika id="cetak" di click
     $("#cetak").click(function(){
       $("#content").load('cetak.php');
-      $('#jumbotron').html('DATA CALON SISWA BARU');
+      $('#jumbotron').html('DATA CALON ANGGOTA BARU');
     });
+
+    $("#cari").click(function(){
+        $("#content").load('cari.php');
+        $('#jumbotron').html('Pencarian');
+      });
 
     $("#pendaftar").click(function(){
       $("#content").load('list_siswa.php');
-      $('#jumbotron').html('Siswa yang sudah mendaftar');
+      $('#jumbotron').html('Anggota yang sudah mendaftar');
     });
     
     $("#tambah-baru").click(function(){
       $("#content").load('form_daftar.php');
-      $('#jumbotron').html('SMK Coding');
+      $('#jumbotron').html('Perpustakaan');
     });
 
     $('#tambahdata').click(function(){
+        $('#kode_anggota').val('');
         $('#nama').val('');
+        $('#Jenis_Kelamin').val('');
+        $('#kelas').val('');
         $('#alamat').val('');
-        $('#agama').val('');
-        $('#sekolah_asal').val('');
-        $('#jenis_kelamin').val('');
-        $('#iduser').val('');
         $('#submit').show();
         $('#edit').hide();
         $('#modal-title').html('Tambah Data');
@@ -30,18 +33,20 @@ $(document).ready(function(){
     });
 
     $('#submit').click(function(){
+        var kode_anggota = $('#kode_anggota').val();
         var nama = $('#nama').val();
         var alamat = $('#alamat').val();
-        var agama = $('#agama').val();
-        var sekolah_asal = $('#sekolah_asal').val();
-        var jenis_kelamin = $('#jenis_kelamin').val();
+        var kelas = $('#kelas').val();
+        var no_hp = $('#no_hp').val();
+        var Jenis_Kelamin = $('#Jenis_Kelamin').val();
 
         $.post("proses_pendaftaran.php", {
+                kode_anggota : kode_anggota,
                 nama: nama,
                 alamat: alamat,
-                agama: agama,
-                sekolah_asal: sekolah_asal,
-                jenis_kelamin: jenis_kelamin 
+                kelas: kelas,
+                no_hp: no_hp,
+                Jenis_Kelamin: Jenis_Kelamin, 
             })
             .done(function() {
                 $('#modelId').modal('hide');
@@ -55,18 +60,18 @@ $(document).ready(function(){
     $('#edit').click(function(){
         var nama = $('#nama').val();
         var alamat = $('#alamat').val();
-        var agama = $('#agama').val();
-        var sekolah_asal = $('#sekolah_asal').val();
-        var jenis_kelamin = $('#jenis_kelamin').val();
-        var id = $('#iduser').val();
+        var kelas = $('#kelas').val();
+        var no_hp = $('#no_hp').val();
+        var Jenis_Kelamin = $('#Jenis_Kelamin').val();
+        var kode_anggota = $('#kode_anggota').val();
 
         $.post("proses_edit.php", {
-                id: id,
+                kode_anggota: kode_anggota,
                 nama: nama,
                 alamat: alamat,
-                agama: agama,
-                sekolah_asal: sekolah_asal,
-                jenis_kelamin: jenis_kelamin 
+                kelas: kelas,
+                no_hp: no_hp,
+                Jenis_Kelamin: Jenis_Kelamin, 
             })
             .done(function() {
                 $('#modelId').modal('hide');
@@ -78,10 +83,10 @@ $(document).ready(function(){
     });
 
     $('#hapus').click(function(){
-        var id = $('#iduser').val();
+        var kode_anggota = $('#kode_anggota').val();
 
         $.get("hapus.php", {
-                id: id
+                kode_anggota: kode_anggota
             })
             .done(function() {
                 $("#content").load('list_siswa.php');
